@@ -1,0 +1,49 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+@import './footernavsection';
+
+footer {
+    background-color: $clr-neutral-dk;
+    color: $clr-text;
+
+    .bottom-socials-bar {
+        @include align-container;
+        @include flex-center('vertical');
+        justify-content: space-between;
+        height: $hgt-footer-socials;
+
+        .socials {
+            @include flex-center('vertical');
+            justify-content: space-between;
+            gap: 1.5rem;
+
+            span {
+                color: $clr-brand-primary;
+                font-size: $fnt-size-lg;
+                font-weight: 700;
+            }
+
+            ul {
+                @include flex-center('vertical');
+                justify-content: space-between;
+                gap: 1rem;
+
+                li {
+                    width: 2.25rem;
+                    height: 2.25rem;
+                    border-radius: 50%;
+
+                    &:hover {
+                        filter: brightness(150%);
+                    }
+
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}

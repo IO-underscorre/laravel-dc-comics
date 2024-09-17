@@ -1,0 +1,10 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+header {
+    padding-top: $hgt-topbar;
+}
+
+main>section>* {
+    @include align-container;
+}

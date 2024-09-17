@@ -1,0 +1,58 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.footer-navigation-section {
+    background-image: url("../images/footer-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &>div {
+        @include align-container;
+        @include flex-center('vertical');
+        justify-content: space-between;
+        gap: 20%;
+        height: $hgt-footer-navigation;
+        overflow: hidden;
+
+        nav {
+            height: 100%;
+            flex: 0 0 fit-content;
+            display: flex;
+            flex-flow: column wrap;
+            gap: 1.5rem;
+            padding: 2.75rem 0;
+
+            .nav-category {
+                width: fit-content;
+
+                strong {
+                    display: block;
+                    color: $clr-text-lt;
+                    font-size: $fnt-size-lg;
+                    margin-bottom: .75rem;
+                }
+
+                li {
+
+                    a {
+                        font-size: $fnt-size-sm;
+
+                        &:hover {
+                            color: $clr-text-lt;
+                        }
+                    }
+                }
+            }
+        }
+
+        .background-logo {
+            flex: 1 0;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

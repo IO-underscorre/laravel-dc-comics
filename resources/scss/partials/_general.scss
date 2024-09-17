@@ -1,0 +1,43 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+menu,
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+:root {
+    font-size: 16px;
+    font-optical-sizing: auto;
+    font-family: "Open Sans", sans-serif;
+}
+
+.visual-btn {
+    display: block;
+    padding: 1em .875rem;
+    color: $clr-brand-secondary;
+    border: .125rem solid $clr-brand-primary;
+    font-weight: 600;
+
+    &:hover {
+        background-color: $clr-brand-primary;
+    }
+
+    &:active {
+        filter: brightness(50%);
+    }
+}
