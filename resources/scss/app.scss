@@ -1,8 +1,13 @@
-@import './partials/general';
+// General rules
+@import './generals/general';
 
-@import './partials/main';
-@import './partials/comicsnav';
+// Partials
 @import './partials/topbar';
+@import './partials/comicsnav';
 @import './partials/footer';
 
-@import './partials/comics';
+// Layouts
+@import './layouts/main';
+
+// Comics CRUD
+@import './comics/index.scss';
