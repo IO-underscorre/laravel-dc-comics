@@ -12,7 +12,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::orderBy('release_date', 'desc')->limit(12)->get();
+        $comics = Comic::all();
 
         return view('comics.index', compact('comics'));
     }

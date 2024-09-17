@@ -12,30 +12,73 @@
     }
 }
 
-main {
-    .current-series {
-        background-color: $clr-neutral-dkr;
+.comics-table {
+    width: 100%;
+    background-color: $clr-brand-secondary;
 
-        h2 {
-            display: inline-block;
-            color: $clr-brand-secondary;
-            background-color: $clr-brand-primary;
-            padding: 1rem 1.75rem;
-            font-size: 1.75rem;
-            line-height: 1;
-            position: relative;
-            top: -1.875rem;
+    tr {
+        display: flex;
+        text-align: center;
+        padding: .5rem 0;
+        @include flex-center('vertical');
+
+        th,
+        td {
+            flex: 1 1 calc(100% / 8);
         }
+    }
 
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 1.75;
-            padding: 0 1rem 1rem;
+    thead {
+        color: $clr-brand-secondary;
 
-            li {
-                flex-basis: calc((100% - 8.75rem) / 6);
+        tr {
+            background-color: $clr-brand-primary;
+        }
+    }
+
+    tbody {
+        background-color: $clr-brand-secondary;
+        color: $clr-neutral-dkr;
+
+        tr {
+            border-top: 1px solid #00000080;
+
+            &:first-child {
+                border-top: 0;
+            }
+
+            &:nth-child(even) {
+                background-color: #00000010;
+            }
+
+            &:hover {
+                background-color: #00000020;
+            }
+
+            .table-options {
+                @include flex-center('vertical');
+                justify-content: center;
+                gap: .5em;
+
+                button {
+                    @include flex-center();
+                    font-size: $fnt-size-sm;
+                    width: 2em;
+                    height: 2em;
+                    border: 0;
+                    background-color: $clr-brand-primary;
+                    color: $clr-brand-secondary;
+                    border-radius: 0;
+                    cursor: pointer;
+
+                    &:hover {
+                        filter: brightness(92.5%);
+                    }
+
+                    &:active {
+                        filter: brightness(85%);
+                    }
+                }
             }
         }
     }

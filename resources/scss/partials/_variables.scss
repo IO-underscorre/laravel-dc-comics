@@ -13,6 +13,8 @@ $clr-text-dk: #464646;
 
 $clr-brand-primary: #0282f9;
 $clr-brand-secondary: #ffffff;
+$clr-brand-secondary-dk-5: darken($clr-brand-secondary, 5%);
+$clr-brand-secondary-dk-10: darken($clr-brand-secondary, 10%);
 
 $clr-neutral-lt: #ffffff;
 $clr-neutral-dk: #303030;

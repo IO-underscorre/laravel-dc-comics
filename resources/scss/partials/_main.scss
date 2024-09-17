@@ -5,6 +5,26 @@ header {
     padding-top: $hgt-topbar;
 }
 
-main>section>* {
-    @include align-container;
+main {
+    section {
+        color: $clr-text-lt;
+        background-color: $clr-neutral-dkr;
+
+        .section-content {
+            @include align-container;
+
+            .section-title {
+                display: inline-block;
+                color: $clr-brand-secondary;
+                background-color: $clr-brand-primary;
+                padding: 1rem 1.75rem;
+                font-size: 1.75rem;
+                line-height: 1;
+                position: relative;
+                top: -1.875rem;
+            }
+
+            padding-bottom: calc(1.875rem + (1.75rem / 2) + 1rem);
+        }
+    }
 }
