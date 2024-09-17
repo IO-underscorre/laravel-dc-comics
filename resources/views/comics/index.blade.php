@@ -10,7 +10,6 @@
     </section>
 @endsection
 
-
 @section('content')
     <main>
         <section class="current-series">
@@ -20,9 +19,9 @@
                 </h2>
 
                 <ul>
-                    @foreach ($comics_issues as $issue)
+                    @foreach ($comics as $comic)
                         <li>
-                            <x-comicissue :title="$issue['title']" :image="$issue['thumb']" />
+                            <x-comicissue :title="$comic['title']" :image="$comic['cover_image']" />
                         </li>
                     @endforeach
                 </ul>

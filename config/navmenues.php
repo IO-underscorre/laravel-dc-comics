@@ -7,7 +7,7 @@ return [
             "menu_text" => "CHARACTERS",
         ],
         [
-            "route_name" => "comics",
+            "route_name" => "comics.index",
             "menu_text" => "COMICS",
         ],
         [
@@ -81,7 +81,7 @@ return [
                     "menu_text" => "Characters",
                 ],
                 [
-                    "route_name" => "comics",
+                    "route_name" => "comics.index",
                     "menu_text" => "Comics",
                 ],
                 [
