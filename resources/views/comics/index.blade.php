@@ -34,19 +34,25 @@
                                 <td>
                                     <menu class="table-options">
                                         <li>
-                                            <a href="{{ route('comics.show', $comic) }}">
+                                            <a href="{{ route('comics.show', $comic) }}" class="option">
                                                 <i class="fa-solid fa-eye"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('comics.edit', $comic) }}">
+                                            <a href="{{ route('comics.edit', $comic) }}" class="option">
                                                 <i class="fa-solid fa-pen"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a>
-                                                <i class="fa-solid fa-trash"></i>
-                                            </a>
+                                            <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                                                @csrf
+
+                                                @method('DELETE')
+
+                                                <button type="submit" class="option">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                            </form>
                                         </li>
                                     </menu>
                                 </td>
@@ -54,7 +60,7 @@
                         @endforeach
                         <tr>
                             <td class="table-options">
-                                <a href="{{ route('comics.create') }}">
+                                <a href="{{ route('comics.create') }}" class="option">
                                     <i class="fa-solid fa-plus"></i>
                                 </a>
                             </td>

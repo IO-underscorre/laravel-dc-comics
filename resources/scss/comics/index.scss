@@ -60,7 +60,7 @@
                 justify-content: center;
                 gap: .5em;
 
-                a {
+                .option {
                     @include flex-center();
                     font-size: $fnt-size-sm;
                     width: 2em;
