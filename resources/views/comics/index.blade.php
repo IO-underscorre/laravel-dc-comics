@@ -39,7 +39,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a>
+                                            <a href="{{ route('comics.edit', $comic) }}">
                                                 <i class="fa-solid fa-pen"></i>
                                             </a>
                                         </li>

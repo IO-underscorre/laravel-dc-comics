@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('page_title')
-    Comics - Add a new comic issue
+    Comics - Modify a comic issue
 @endsection
 
 @section('jumbo')
@@ -17,8 +17,8 @@
                 </h2>
 
                 @include('partials.comics.input_form', [
-                    'action' => route('comics.store'),
-                    'comic_to_update' => null,
+                    'action' => route('comics.update', $comic->id),
+                    'comic_to_update' => $comic,
                 ])
             </div>
         </section>

@@ -32,9 +32,10 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $new_comic = new Comic();
+
         $data['slug'] = Helper::generateSlug("{$data['series']}-{$data['title']}", Comic::class);
 
-        $new_comic = new Comic();
         $new_comic->fill($data);
         $new_comic->save();
 
@@ -56,7 +57,9 @@ class ComicController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $comic = Comic::find($id);
+
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -64,7 +67,14 @@ class ComicController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->all();
+        $comic = Comic::find($id);
+
+        $data['slug'] = $data['title'] === $comic->title && $data['series'] === $comic->series ? $comic->slug : Helper::generateSlug("{$data['series']}-{$data['title']}", Comic::class);
+
+        $comic->update($data);
+
+        return redirect()->route('comics.show', $id);
     }
 
     /**
