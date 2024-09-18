@@ -13,7 +13,7 @@
         <section class="current-series">
             <div class="section-content">
                 <h2 class="section-title">
-                    COMICS
+                    MODIFY THIS COMIC ISSUE
                 </h2>
 
                 @include('partials.comics.input_form', [
