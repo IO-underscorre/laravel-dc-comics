@@ -1,0 +1,78 @@
+@use '../generals/variables' as *;
+@use '../generals/mixins' as *;
+
+.create-form {
+    display: flex;
+    gap: 50px;
+
+    .form-side {
+        flex: 1 0 250px;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        .input-group {
+            label {
+                display: block;
+                font-weight: 600;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                display: block;
+                line-height: 1.4;
+                color: $clr-neutral-dkr;
+                background-color: $clr-neutral-lt;
+                border: 1px solid $clr-neutral-dkr;
+                outline: none;
+
+                &:focus {
+                    border-color: $clr-brand-primary;
+                }
+            }
+        }
+
+        .option-group {
+            margin-top: auto;
+            align-self: flex-end;
+
+            input {
+                display: inline-block;
+                line-height: 1.4;
+                border: 1px solid;
+                padding: 0 .25rem;
+                font-weight: 700;
+
+                &[type="reset"] {
+                    background-color: $clr-brand-secondary;
+                    border-color: $clr-brand-secondary;
+                    color: $clr-neutral-dkr;
+                }
+
+                &[type="submit"] {
+                    background-color: $clr-brand-primary;
+                    border-color: $clr-brand-primary;
+                    color: $clr-brand-secondary;
+                    margin-left: 1rem;
+                }
+
+                &:hover {
+                    filter: brightness(92.5%);
+                }
+
+                &:active {
+                    filter: brightness(85%);
+                }
+            }
+        }
+
+        input {
+            height: calc($fnt-size * 1.4);
+        }
+
+        textarea {
+            height: calc($fnt-size * 1.4 * 6);
+        }
+    }
+}

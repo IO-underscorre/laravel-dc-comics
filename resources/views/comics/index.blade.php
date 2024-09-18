@@ -54,6 +54,13 @@
                                 </td>
                             </tr>
                         @endforeach
+                        <tr>
+                            <td class="table-options">
+                                <a href="{{ route('comics.create') }}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
