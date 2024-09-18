@@ -81,6 +81,6 @@
             </div>
         </section>
 
-        @include('partials.comicsnav')
+        @include('partials.comics.main_nav')
     </main>
 @endsection
