@@ -6,7 +6,7 @@
 
 @section('jumbo')
     <section class="jumbotron">
-        <img src="{!! Vite::asset('resources/images/jumbotron.jpg') !!}" alt="DC Comics">
+        <img src="{{ Vite::asset('resources/images/jumbotron.jpg') }}" alt="DC Comics">
     </section>
 @endsection
 
@@ -36,19 +36,19 @@
                                 <td>
                                     <menu class="table-options">
                                         <li>
-                                            <button>
+                                            <a href="{{ route('comics.show', $comic) }}">
                                                 <i class="fa-solid fa-eye"></i>
-                                            </button>
+                                            </a>
                                         </li>
                                         <li>
-                                            <button>
+                                            <a>
                                                 <i class="fa-solid fa-pen"></i>
-                                            </button>
+                                            </a>
                                         </li>
                                         <li>
-                                            <button>
+                                            <a>
                                                 <i class="fa-solid fa-trash"></i>
-                                            </button>
+                                            </a>
                                         </li>
                                     </menu>
                                 </td>

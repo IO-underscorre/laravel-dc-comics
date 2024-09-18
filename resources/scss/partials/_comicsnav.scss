@@ -6,9 +6,10 @@
     color: $clr-brand-secondary;
 
     &>menu {
-        display: flex;
+        @include flex-center('horizontal');
         justify-content: space-evenly;
-        align-items: center;
+        gap: .5rem;
+        flex-wrap: wrap;
         padding: 3rem 0;
 
         a {

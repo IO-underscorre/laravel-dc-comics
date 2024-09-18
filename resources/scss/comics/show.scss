@@ -1,0 +1,40 @@
+@use '../generals/variables' as *;
+@use '../generals/mixins' as *;
+
+.comic-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    figure {
+        flex: 2 0 250px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .comic-infos {
+        flex: 3 0 375px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: $fnt-size-lg;
+
+        .info-group {
+            >* {
+                display: block;
+
+                &.info-label {
+                    color: $clr-brand-primary;
+                }
+
+                &.info-text {
+                    font-size: $fnt-size-lg;
+                }
+            }
+        }
+    }
+}
