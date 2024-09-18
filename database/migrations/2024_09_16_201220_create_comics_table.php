@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('slug', 255)->unique();
             $table->smallInteger('issue_number')->unsigned();
             $table->text('summary')->nullable();
-            $table->string('cover_image')->nullable();
-            $table->date('release_date');
-            $table->smallInteger('page_count')->unsigned();
-            $table->decimal('price', 8, 2);
+            $table->string('cover_image', 510)->nullable();
+            $table->date('release_date')->nullable();
+            $table->smallInteger('page_count')->unsigned()->nullable();
+            $table->decimal('price', 8, 2)->unsigned();
             $table->timestamps();
         });
     }

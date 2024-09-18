@@ -25,7 +25,9 @@ class ComicSeeder extends Seeder
                 $comic->slug = Helper::generateSlug("{$row_data[1]}-{$row_data[0]}", Comic::class);
                 $comic->issue_number = $row_data[2];
                 $comic->summary = $row_data[3];
-                $comic->cover_image = $row_data[4];
+                if (exif_imagetype($row_data[4])) {
+                    $comic->cover_image = $row_data[4];
+                }
                 $comic->release_date = $row_data[5];
                 $comic->price = $row_data[6];
                 $comic->page_count = $row_data[7];
