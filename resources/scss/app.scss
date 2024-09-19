@@ -10,6 +10,9 @@
 @import './layouts/main';
 
 // Comics CRUD
-@import './comics/index.scss';
-@import './comics/show.scss';
-@import './comics/create.scss';
+@import './comics/index';
+@import './comics/show';
+@import './comics/create';
+
+// Error pages
+@import './errors/errors';
