@@ -18,7 +18,7 @@
 
                 <article class="comic-container">
                     <figure>
-                        <img src="{{ isset($comic->cover_image) && exif_imagetype($comic->cover_image) ? $comic->cover_image : Vite::asset('resources/images/default-cover.jpg') }}"
+                        <img src="{{ isset($comic->cover_image) ? $comic->cover_image : Vite::asset('resources/images/default-cover.jpg') }}"
                             alt="{{ $comic->title }}">
                     </figure>
 
