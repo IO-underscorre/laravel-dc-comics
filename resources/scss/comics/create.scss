@@ -10,9 +10,11 @@
         flex: 1 0 250px;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.125rem;
 
         .input-group {
+            position: relative;
+
             label {
                 display: block;
                 font-weight: 600;
@@ -27,10 +29,25 @@
                 background-color: $clr-neutral-lt;
                 border: 1px solid $clr-neutral-dkr;
                 outline: none;
+                padding: 0 .2rem;
 
                 &:focus {
                     border-color: $clr-brand-primary;
                 }
+
+                &.error-inputted {
+                    border-color: $clr-error;
+                }
+            }
+
+            .error-message {
+                position: absolute;
+                font-size: $fnt-size-sm;
+                font-weight: 600;
+                line-height: 1;
+                bottom: -$fnt-size-sm;
+                transform: translate(0, 20%);
+                color: $clr-error;
             }
         }
 

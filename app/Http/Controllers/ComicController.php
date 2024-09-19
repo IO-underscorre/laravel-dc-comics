@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Functions\Helper;
+use App\Http\Requests\ComicRequest;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 
@@ -29,15 +30,13 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
         $data = $request->all();
-        $new_comic = new Comic();
 
         $data['slug'] = Helper::generateSlug("{$data['series']}-{$data['title']}", Comic::class);
 
-        $new_comic->fill($data);
-        $new_comic->save();
+        $new_comic = Comic::create($data);
 
         return redirect()->route('comics.show', $new_comic->id);
     }
@@ -65,7 +64,7 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ComicRequest $request, string $id)
     {
         $data = $request->all();
         $comic = Comic::find($id);
