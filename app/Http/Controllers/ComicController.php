@@ -62,6 +62,10 @@ class ComicController extends Controller
     {
         $comic = Comic::find($id);
 
+        if (!isset($comic)) {
+            abort(404);
+        }
+
         return view('comics.edit', compact('comic'));
     }
 
@@ -72,6 +76,10 @@ class ComicController extends Controller
     {
         $data = $request->all();
         $comic = Comic::find($id);
+
+        if (!isset($comic)) {
+            abort(404);
+        }
 
         $data['slug'] = $data['title'] === $comic->title && $data['series'] === $comic->series ? $comic->slug : Helper::generateSlug("{$data['series']}-{$data['title']}", Comic::class);
 
@@ -86,6 +94,10 @@ class ComicController extends Controller
     public function destroy(string $id)
     {
         $comic = Comic::find($id);
+
+        if (!isset($comic)) {
+            abort(404);
+        }
 
         $comic->delete();
 
