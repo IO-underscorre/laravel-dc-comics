@@ -1,0 +1,23 @@
+@use '../generals/variables' as *;
+@use '../generals/mixins' as *;
+
+@use 'sass:color';
+
+.placeholder-section {
+    height: 80vh;
+    min-height: 400px;
+    background-color: color.adjust($clr-brand-primary, $whiteness: 80%);
+    @include flex-center;
+
+    h1 {
+        @include align-container;
+        display: block;
+        font-size: 5rem;
+        text-align: center;
+
+        a {
+            display: block;
+            color: $clr-brand-primary;
+        }
+    }
+}
